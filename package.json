@@ -1,0 +1,31 @@
+{
+  "name": "secretsanta",
+  "version": "1.0.0",
+  "description": "secret santa generator",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "*",
+    "bootstrap": "^4.0.0-beta.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.9",
+    "mongoose-paginate": "^5.0.3",
+    "nodemon": "^1.14.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToucanBran/SecretSanta.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ToucanBran/SecretSanta/issues"
+  },
+  "homepage": "https://github.com/ToucanBran/SecretSanta#readme"
+}

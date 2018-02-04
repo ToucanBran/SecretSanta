@@ -1,0 +1,8 @@
+<ul class="list-group mx-auto santaListWidth">
+  <li class="list-group-item card cardWidth" *ngFor="let santa of santas">
+    <h5 class="card-title">{{santa.name}}</h5>
+    <p class="card-text">{{santa.phoneNumber}}</p>
+    <p class="card-text">{{santa.email}}</p>
+  </li>
+  <button class="btn mx-auto btn-primary btn-lg" (click)="match()">Match</button>
+</ul>
