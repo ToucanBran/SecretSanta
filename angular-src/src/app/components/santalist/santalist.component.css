@@ -5,3 +5,20 @@
 .santaListWidth {
 	width:200px;
 }
+
+ul {
+  display:flex;
+  flex-direction:column;
+  height:500px;
+  width:100%;
+  overflow: auto;
+}
+
+.card {
+	overflow-y: hidden;
+	  width: 150px;
+}
+
+.card:hover {
+	overflow-y:visible;
+}

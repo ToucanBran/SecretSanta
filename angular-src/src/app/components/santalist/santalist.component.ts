@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SantaService } from '../../services/santa.service';
+import { UtilityService } from '../../services/utility.service';
 import { Santa } from '../../classes/santa';
 import * as _ from 'underscore';
+
 @Component({
   selector: 'app-santalist',
   templateUrl: './santalist.component.html',
@@ -10,8 +12,9 @@ import * as _ from 'underscore';
 export class SantalistComponent implements OnInit {
 
 	name:string;
-	santas: Santa[]
-	constructor(private santaService: SantaService) 
+	santas: Santa[];
+	matched:boolean;
+	constructor(private santaService: SantaService, private utilityService: UtilityService) 
 	{ 
 		this.santas = santaService.santas;
 	}
@@ -21,17 +24,32 @@ export class SantalistComponent implements OnInit {
 	}
 
 	match() {
-		console.log("Match worked");
-		let x = {something:1};
-		let y = {something:20};
-		let f = {something:11};
-		let g = {something:21};
-		let h = {something:133};
-		let z = [x, y,f,g,h];
-		_.shuffle(this.santas);
-		_.shuffle(z)
-		console.log(z)
-		console.log(_.size(this.santas));
+		let randomMatches = [];
+		for (var i = 0; i < this.santas.length; i++)
+		{
+			randomMatches.push(i);
+		}
+		_.shuffle(randomMatches);
+		
+		this.santas.forEach((randomSanta, index) => {
+			if (index == this.santas.length - 1)
+				randomSanta.matchedName = this.santas[0].name;
+			else
+				randomSanta.matchedName = this.santas[index + 1].name
+		});
+		this.matched = true;
+	}
+
+	notify() {
+		console.log(this.santaService.notify(this.santas));
+	}
+
+	hasMatched() {
+		return this.matched;
+	}
+
+	hasSantas() {
+		return this.santas.length > 1;
 	}
 
 }

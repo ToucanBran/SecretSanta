@@ -1,4 +1,4 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# See http:/help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
 /dist
@@ -40,5 +40,46 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# compiled output
+/angular-src/dist
+/angular-src/tmp
+/angular-src/out-tsc
+
+# dependencies
+/angular-src/node_modules
+
+# IDEs and editors
+/angular-src/.idea
+/angular-src/.project
+/angular-src/.classpath
+/angular-src/.c9/
+/angular-src/*.launch
+/angular-src/.settings/
+/angular-src/*.sublime-workspace
+
+# IDE - VSCode
+/angular-src/.vscode/*
+/angular-src/!.vscode/settings.json
+/angular-src/!.vscode/tasks.json
+/angular-src/!.vscode/launch.json
+/angular-src/!.vscode/extensions.json
+
+# misc
+/angular-src/.sass-cache
+/angular-src/connect.lock
+/angular-src/coverage
+/angular-src/libpeerconnection.log
+/angular-src/npm-debug.log
+/angular-src/testem.log
+/angular-src/typings
+
+# e2e
+/angular-src/e2e/*.js
+/angular-src/e2e/*.map
+
+# System Files
+/angular-src/.DS_Store
+/angular-src/Thumbs.db
 
 /config

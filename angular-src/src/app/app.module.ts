@@ -5,7 +5,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SantalistComponent } from './components/santalist/santalist.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SantaService } from './services/santa.service';
+import { UtilityService } from './services/utility.service';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,10 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [SantaService],
+  providers: [SantaService, UtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

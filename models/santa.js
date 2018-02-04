@@ -29,5 +29,3 @@ const Santa = module.exports = mongoose.model('Santa', SantaSchema);
 module.exports.getAssignedPerson = function(personHash, callback){
 	Santa.findOne({assignedPersonHash: personHash});
 }
-
-module.exports.
