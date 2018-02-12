@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 
 
 router.get('/santas', (req, res, next) => {
-    res.send('samtas');
+    res.send('santas');
 });
 
 module.exports = router;
