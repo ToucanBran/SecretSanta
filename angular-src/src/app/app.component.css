@@ -1,0 +1,5 @@
+.navwrapper {
+	display:flex;
+	align-items: stretch;
+	float:left;
+}

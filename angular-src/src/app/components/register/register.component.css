@@ -1,4 +1,18 @@
-.btnMediumBlock {
-	width: 20em;
-	padding:5px;
+button:before {
+	content:'\FF0B';
+}
+
+button {
+	font-size:1.5em;
+	background:transparent;
+}
+
+form input {
+	background: transparent;
+	border:none;
+	border-bottom:1px solid white;
+}
+
+form input:active {
+	background:transparent;
 }
