@@ -29,4 +29,8 @@ export class SantaService {
 
 		return message;
 	}
+
+	clear() {
+		this.santas.length = 0;
+	}
 }

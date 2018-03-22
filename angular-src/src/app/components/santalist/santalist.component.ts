@@ -31,17 +31,21 @@ export class SantalistComponent implements OnInit {
 		}
 		_.shuffle(randomMatches);
 		
-		this.santas.forEach((randomSanta, index) => {
+		this.santaService.santas.forEach((randomSanta, index) => {
 			if (index == this.santas.length - 1)
-				randomSanta.matchedName = this.santas[0].name;
+				randomSanta.matchedName = this.santaService.santas[0].name;
 			else
-				randomSanta.matchedName = this.santas[index + 1].name
+				randomSanta.matchedName = this.santaService.santas[index + 1].name
 		});
 		this.matched = true;
 	}
 
 	notify() {
 		console.log(this.santaService.notify(this.santas));
+	}
+
+	clear() {
+		this.santaService.clear();
 	}
 
 	hasMatched() {

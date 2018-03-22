@@ -2,6 +2,7 @@
   <div class="row col-3">
     <button [disabled]="!hasSantas()" class="btn mx-auto btn-primary btn-lg" (click)="match()">Pick Secret Santas</button>
     <button [disabled]="!hasMatched()" class="btn mx-auto btn-primary btn-lg " (click)="notify()">Notify Everyone</button>
+     <button [disabled]="!hasMatched()" class="btn mx-auto btn-primary btn-lg " (click)="clear()">Clear All</button>
   </div>
   <div class="row santaList">
       <div class="list-group-item card" *ngFor="let santa of santas">
