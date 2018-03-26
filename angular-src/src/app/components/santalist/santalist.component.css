@@ -2,23 +2,22 @@
 	width: 18rem;
 }
 
-.santaListWidth {
-	width:200px;
+#santaList {
+	display:grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+	grid-gap:1em;
+	margin:5px;
+	flex: 0 2 auto;
+	max-height:600px;
+	overflow: auto;
 }
 
-ul {
-  display:flex;
-  flex-direction:column;
-  height:500px;
-  width:100%;
-  overflow: auto;
+#santaControlButtons {
+	flex: 0 1 auto;
 }
 
-.card {
-	overflow-y: hidden;
-	  width: 150px;
+.flex-column {
+	flex-direction: column;
 }
 
-.card:hover {
-	overflow-y:visible;
-}
+.top5 { margin-top:5px; }

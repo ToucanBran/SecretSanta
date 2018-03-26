@@ -1,16 +1,15 @@
-<div class="container">
-  <div class="row">
-    <button [disabled]="!hasSantas()" class="btn mx-auto btn-primary btn-lg" (click)="match()">Pick Secret Santas</button>
-    <button [disabled]="!hasMatched()" class="btn mx-auto btn-primary btn-lg " (click)="notify()">Notify Everyone</button>
+<div class="row">
+  <div id="santaList" class="col-9">
+    <div class="list-group-item card" *ngFor="let santa of santas">
+      <h5 class="card-title">{{santa.name}}</h5>
+      <p class="card-text">{{santa.phoneNumber}}</p>
+      <p class="card-text">{{santa.email}}</p>
+      <p class="card-text">{{santa.matchedName}}</p>
+    </div>
   </div>
-  <div class="row">
-    <ul class="list-group mx-auto santaListWidth">
-      <li class="list-group-item card cardWidth" *ngFor="let santa of santas">
-        <h5 class="card-title">{{santa.name}}</h5>
-        <p class="card-text">{{santa.phoneNumber}}</p>
-        <p class="card-text">{{santa.email}}</p>
-        <p class="card-text">{{santa.matchedName}}</p>
-      </li>
-    </ul>
+  <div id="santaControlButtons" class="col-2 flex-column">
+      <button [disabled]="!hasSantas()" class="top5 btn mx-auto btn-primary btn-lg col-12" (click)="match()">Pick Secret Santas</button>
+      <button [disabled]="!hasMatched()" class="top5 btn mx-auto btn-primary btn-lg col-12" (click)="notify()">Notify Everyone</button>
+      <button [disabled]="!hasSantas()" class="top5 btn mx-auto btn-primary btn-lg col-12" (click)="clear()">Clear All</button>
   </div>
 </div>
