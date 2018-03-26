@@ -6,9 +6,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class SantaService {
 
 	santas: Santa[];
-	notifyUrl: string = 'http://localhost:3000/santas/notify';
+	matched = false;
+	notifyUrl: 'http://localhost:3000/santas/notify';
 
-	constructor(private http: HttpClient) { 
+	constructor(private http: HttpClient) {
 		this.santas = [];
 	}
 
@@ -16,10 +17,18 @@ export class SantaService {
 		this.santas.push(santa);
 	}
 
+	setMatches(santas) {
+		this.matched = true;
+		this.santas = santas;
+	}
+
+	getSantas(): Santa[] {
+		return this.santas;
+	}
 	notify(santaList) {
 		const headers = new HttpHeaders()
 			.set('Content-Type', 'application/json');
-		let data = {santas: santaList};	
+		let data = { santas: santaList };
 		let message;
 		this.http.post(this.notifyUrl, JSON.stringify(data), {
 			headers: headers
@@ -30,7 +39,12 @@ export class SantaService {
 		return message;
 	}
 
+	hasMatched(): boolean {
+		return this.matched;
+	}
+
 	clear() {
+		this.matched = false;
 		this.santas.length = 0;
 	}
 }

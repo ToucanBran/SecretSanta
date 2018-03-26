@@ -2,9 +2,22 @@
 	width: 18rem;
 }
 
-.santaList {
+#santaList {
 	display:grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
 	grid-gap:1em;
 	margin:5px;
+	flex: 0 2 auto;
+	max-height:600px;
+	overflow: auto;
 }
+
+#santaControlButtons {
+	flex: 0 1 auto;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.top5 { margin-top:5px; }

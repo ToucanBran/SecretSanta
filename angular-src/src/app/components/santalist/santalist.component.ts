@@ -13,35 +13,34 @@ export class SantalistComponent implements OnInit {
 
 	name:string;
 	santas: Santa[];
-	matched:boolean;
 	constructor(private santaService: SantaService, private utilityService: UtilityService) 
 	{ 
-		this.santas = santaService.santas;
 	}
 
 	ngOnInit() {
-		
+		this.santas = this.santaService.getSantas();
 	}
 
 	match() {
 		let randomMatches = [];
-		for (var i = 0; i < this.santas.length; i++)
+		let santas = this.santaService.getSantas();
+		for (var i = 0; i < santas.length; i++)
 		{
 			randomMatches.push(i);
 		}
 		_.shuffle(randomMatches);
 		
-		this.santaService.santas.forEach((randomSanta, index) => {
-			if (index == this.santas.length - 1)
-				randomSanta.matchedName = this.santaService.santas[0].name;
+		santas.forEach((randomSanta, index) => {
+			if (index == santas.length - 1)
+				randomSanta.matchedName = santas[0].name;
 			else
-				randomSanta.matchedName = this.santaService.santas[index + 1].name
+				randomSanta.matchedName = santas[index + 1].name
 		});
-		this.matched = true;
+		this.santaService.setMatches(santas);
 	}
 
 	notify() {
-		console.log(this.santaService.notify(this.santas));
+		console.log("");
 	}
 
 	clear() {
@@ -49,11 +48,11 @@ export class SantalistComponent implements OnInit {
 	}
 
 	hasMatched() {
-		return this.matched;
+		return this.santaService.hasMatched();
 	}
 
 	hasSantas() {
-		return this.santas.length > 1;
+		return this.santaService.getSantas().length > 0;
 	}
 
 }

@@ -1,8 +1,8 @@
-button:before {
+/* button:before {
 	content:'\FF0B';
-}
+} */
 
-button {
+/* button {
 	font-size:1.5em;
 	background:transparent;
 }
@@ -15,4 +15,4 @@ form input {
 
 form input:active {
 	background:transparent;
-}
+} */
